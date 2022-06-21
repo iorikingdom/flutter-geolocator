@@ -24,7 +24,7 @@ public class PermissionUtils {
       PackageInfo info =
           context
               .getPackageManager()
-              .getPackageInfo(context.getPackageName(), PackageManager.GET_PERMISSIONS);
+              .getPackageInfo(context.getPackageName(), PackageInfoFlags.of(PackageManager.GET_PERMISSIONS));
       if (info.requestedPermissions != null) {
         for (String p : info.requestedPermissions) {
           if (p.equals(permission)) {
